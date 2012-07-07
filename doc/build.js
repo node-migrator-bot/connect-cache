@@ -20,7 +20,7 @@ var version = process.argv.shift()
   , file;
 fs.writeFile(build_path + 'current', version);
 build_path += version + '/';
-if (!path.existsSync(build_path)) {
+if (!fs.existsSync(build_path)) {
   fs.mkdirSync(build_path, 0755);
   process.stdout.write(build_path + ' created\n');
 }
